@@ -1,3 +1,23 @@
+:root{
+  --azul-oscuro: #00273B;
+  --azul-muy-claro: #0085C7;
+  --azul-claro: #005A87;
+  --azul:#1939FA;
+  --naranja: #FA5419;
+  --rosado: #BD14C7;
+  --verde: #59C70A;
+  --rojo: #C71426;
+  --gris-claro: #BEC7C7;
+  --gris: #7F7F7F;
+  --gris-oscuro: #272727;
+  --marino: #0BD4AA;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +25,123 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--azul-claro);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /*Navegador*/
+ 
+.navBar {
+  width: 100vw;
+  height: 90px;
+  padding: 0 10px;
+  display: flex;
+  border-bottom: 1px solid black;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+  background-color: var(--azul-muy-claro);
+}
+
+.navBar a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+}
+.navBar .logo{
+  font-size: 2rem;
+  text-shadow: 1px 1px var(--rosado);
+  color: var(--azul);
+}
+.activo{
+  background-color: var(--marino);
+}
+.contenedor-central-nav{
+  height: 100%;
+  display: flex;
+  width: 50%;
+  max-width: 420px;
+  min-width: 100px;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.contenedor-central-nav .inicioNav{
+  width: auto;
+  height: 50px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.navBar .div-lista{
+  width: 70%;
+  height: 100%;
+
+}
+.navBar .div-lista > ul{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3px ;
+  align-items: center;
+  list-style: none;
+}
+
+.navBar .div-lista > ul > li{
+  height: 50px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  transition: all ease 0.2s;
+  -webkit-transition: all ease 0.2s;
+  -moz-transition: all ease 0.2s;
+  -ms-transition: all ease 0.2s;
+  -o-transition: all ease 0.2s;
+}
+
+.navBar .div-lista > ul > li:hover{
+  border: 1px solid var(--azul-oscuro);
+  background-color: var(--azul-oscuro);
+}
+
+
+.navBar .div-lista > ul > li > a{
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.navBar .div-lista > ul > li:hover > a{
+  color: var(--azul-muy-claro);
+}
+
+.navBar .login {
+  width: auto;
+  height: 50px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Termina Navegador*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
