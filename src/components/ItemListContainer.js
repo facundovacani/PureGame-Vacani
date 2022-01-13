@@ -1,9 +1,14 @@
 const ItemListContainer = ({greeting}) => {
     return (
         <main>
-            <h2>{greeting}</h2>
+            <h2 style={{fontSize: "3rem",
+             color: "var(--azul-oscuro)",
+             textShadow: "0px 3px 5px var(--azul-muy-claro)",
+             letterSpacing: "3px",
+             wordSpacing: "12px"}}>{greeting}</h2>
         </main>
     )
 }
 
 export default ItemListContainer
+
