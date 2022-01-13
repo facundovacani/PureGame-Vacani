@@ -11,8 +11,25 @@
   --gris: #7F7F7F;
   --gris-oscuro: #272727;
   --marino: #0BD4AA;
+  --neon-fucsia:#c501e2;
+  --neon-verde:#2ef8a0;
+  --neon-rojo:#ff0534;
+  --neon-rosado: #f82d97;
+  --neon-celeste: #01c4e7;
+
+  --neon-rosa-oscuro: #f23869;
+  --neon-violeta-oscuro: #110559;
+  --neon-violeta-muy-oscuro: #030226;
+  --neon-violeta:#21118c;
+  --neon-violeta-claro: #3621BF;
+
 }
 
+
+@font-face {
+  font-family:'Inconsolata', monospace;
+  src: url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Lora&display=swap");
+}
 *{
   margin: 0;
   padding: 0;
@@ -25,7 +42,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--azul-claro);
+  background-color: var(--azul-oscuro);
 }
 
 code {
@@ -41,50 +58,48 @@ code {
   height: 90px;
   padding: 0 10px;
   display: flex;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--neon-violeta);
   justify-content: space-between;
   margin-bottom: 10px;
   align-items: center;
-  background-color: var(--azul-muy-claro);
+  background-color: var(--neon-violeta-muy-oscuro);
 }
 
 .navBar a {
   text-decoration: none;
-  color: #000;
   font-weight: 600;
 }
 .navBar .logo{
   font-size: 2rem;
-  text-shadow: 1px 1px var(--rojo);
-  color: var(--azul);
-}
-.activo{
-  background-color: var(--marino);
+  text-shadow: 1px 1px var(--neon-celeste);
+  background: radial-gradient(closest-side, var(--neon-violeta-claro), transparent);
+  color: var(--neon-rojo);
 }
 .contenedor-central-nav{
   height: 100%;
   display: flex;
-  width: 50%;
-  max-width: 420px;
-  min-width: 100px;
-  justify-content: space-between;
+  width:55%;
+  min-width: 450px;
+  justify-content: space-around;
   align-items: center;
   
 }
 .contenedor-central-nav .inicioNav{
-  width: auto;
   height: 50px;
+  width: 20%;
   padding: 0 10px;
   border: 1px solid transparent;
-  border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.contenedor-central-nav .inicioNav a{
+  color: var(--neon-celeste);
+}
 
 .navBar .div-lista{
-  width: 70%;
+  width: 50%;
   height: 100%;
 
 }
@@ -93,46 +108,122 @@ code {
   height: 100%;
   display: flex;
   justify-content: space-evenly;
-  gap: 3px ;
+  gap: 0 15px ;
   align-items: center;
   list-style: none;
 }
 
 .navBar .div-lista > ul > li{
   height: 50px;
-  border: 1px solid transparent;
-  border-radius: 30px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
-  transition: all ease 0.2s;
-  -webkit-transition: all ease 0.2s;
-  -moz-transition: all ease 0.2s;
-  -ms-transition: all ease 0.2s;
-  -o-transition: all ease 0.2s;
+
 }
 
-.navBar .div-lista > ul > li:hover{
-  border: 1px solid var(--azul-oscuro);
-  background-color: var(--azul-oscuro);
-}
-
-
-.navBar .div-lista > ul > li > a{
-  margin: 0 10px;
+/*Efecto bordes neon*/
+.btn-nav{
+  font-family: 'Inconsolata', monospace;
+  font-size: 18px;
+  width: auto;
+  padding: 15px 30px;
+  letter-spacing: 3px;
   display: flex;
+  color: var(--neon-celeste);
   align-items: center;
   justify-content: center;
-  height: 100%;
+  position: relative;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  overflow: hidden;
 }
 
-.navBar .div-lista > ul > li:hover > a{
-  color: var(--azul-muy-claro);
+.btn-nav:hover {
+  background: var(--neon-celeste);
+  box-shadow: 0 0 10px var(--neon-celeste), 0 0 30px var(--neon-celeste), 0 0 60px var(--neon-celeste);
+  transition-delay: 1s;
+  color: var(--neon-violeta-muy-oscuro);
+
 }
+.btn-nav span{
+  position: absolute;
+  display: block;
+}
+.btn-nav > .span1{
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,var(--neon-celeste));
+}
+
+.btn-nav:hover > .span1{
+  left: 100%;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+.btn-nav  > .span3{
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,var(--neon-celeste));
+}
+
+.btn-nav:hover > .span3{
+  right: 100%;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition-delay: 0.5s;
+}
+
+.btn-nav > .span2{
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,var(--neon-celeste));
+}
+
+.btn-nav:hover > .span2{
+  top: 100%;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition-delay: 0.25s;
+}
+.btn-nav > .span4{
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,var(--neon-celeste));
+}
+
+.btn-nav:hover > .span4{
+  bottom: 100%;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition-delay: 0.75s;
+}
+
+/*---------------------------------*/
+/*Carrito*/
 
 .div-carrito-login {
-  width: 150px;
+  width: 180px;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -140,13 +231,38 @@ code {
 }
 
 .div-carrito-login > div{
-  font-size: 22px;
-  color: var(--azul-oscuro);
+  font-size: 28px;
+  color: var(--neon-celeste);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 .fa-shopping-cart{
   margin-right: 5px;
 }
+.contenedor-conteo-carrito{
+  display: inline-block;
+  position: relative;
+  background-color: var(--neon-violeta-claro);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  left: -25%;
+  top: -10%;
+}
+.conteo-carrito{ 
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: absolute;
+  top: -18%;
+  left: 20%;
+  color: var(--neon-verde);
+}
+
+
+/*Termina Carrito (El carrito y el login están en un mismo contenedor)*/
 .navBar .login {
   width: 60px;
   height: 50px;

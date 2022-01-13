@@ -7,7 +7,10 @@ function CartWidget (){
     return ( 
         <div>
             <FontAwesomeIcon icon={faShoppingCart} />
-            <span>{aniadido}</span> 
+            <div className='contenedor-conteo-carrito'>
+                <span className='conteo-carrito'>{aniadido}</span> 
+
+            </div>
         </div>
     )
 }
