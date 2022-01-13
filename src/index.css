@@ -94,10 +94,6 @@ code {
   align-items: center;
 }
 
-.contenedor-central-nav .inicioNav a{
-  color: var(--neon-celeste);
-}
-
 .navBar .div-lista{
   width: 50%;
   height: 100%;
