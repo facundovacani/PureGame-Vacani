@@ -55,7 +55,7 @@ code {
 }
 .navBar .logo{
   font-size: 2rem;
-  text-shadow: 1px 1px var(--rosado);
+  text-shadow: 1px 1px var(--rojo);
   color: var(--azul);
 }
 .activo{
@@ -131,8 +131,24 @@ code {
   color: var(--azul-muy-claro);
 }
 
+.div-carrito-login {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.div-carrito-login > div{
+  font-size: 22px;
+  color: var(--azul-oscuro);
+
+}
+.fa-shopping-cart{
+  margin-right: 5px;
+}
 .navBar .login {
-  width: auto;
+  width: 60px;
   height: 50px;
   padding: 0 10px;
   border: 1px solid transparent;
@@ -145,3 +161,17 @@ code {
 /*Termina Navegador*/
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Empieza Main*/
+main {
+  margin-top: 20px;
+  text-align: center;
+}
+
+main > h2{
+  font-size: 3rem;
+  color: var(--azul-oscuro);
+  text-shadow: 0px 3px 5px var(--azul-muy-claro);
+  letter-spacing: 3px;
+  word-spacing: 12px;
+}

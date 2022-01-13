@@ -1,3 +1,5 @@
+import CartWidget from "./CartWidget";
+
 function NavBar(){
     return (
     <header>
@@ -5,17 +7,21 @@ function NavBar(){
             <a className="logo" href="#">PureGame</a>
             <div className="contenedor-central-nav">
                 <div className="inicioNav activo">
-                    <a href="#">Inicio</a>
+                    <a href="/#">Inicio</a>
                 </div>
                 <div className="div-lista">
                     <ul>
-                        <li><a href="#">Acción</a></li>
-                        <li><a href="#">Estrategía</a></li>
-                        <li><a href="#">Terror</a></li>
+                        <li><a href="/#">Acción</a></li>
+                        <li><a href="/#">Estrategía</a></li>
+                        <li><a href="/#">Terror</a></li>
                     </ul>
                 </div>
             </div>
-            <a href="#" className="login activo">Login</a>
+
+            <div className="div-carrito-login">
+                <CartWidget />
+                <a href="#" className="login activo">Login</a>
+            </div>
         </nav>
 
     
