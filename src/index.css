@@ -85,7 +85,7 @@ code {
   
 }
 .contenedor-central-nav .inicioNav{
-  height: 50px;
+  height: 100%;
   width: 20%;
   padding: 0 10px;
   border: 1px solid transparent;
@@ -229,11 +229,20 @@ code {
 .div-carrito-login > div{
   font-size: 28px;
   color: var(--neon-celeste);
+  height: 50px;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 
+}
+.div-carrito-login > div > a{
+  color: var(--neon-celeste);
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .fa-shopping-cart{
   margin-right: 5px;
