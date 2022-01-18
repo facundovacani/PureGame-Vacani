@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <NavBar /> 
-      <ItemListContainer greeting={"Estos son los mejores juegos en el mercado"} />
+      <ItemListContainer greeting={"Estos son los mejores juegos arcade del mercado"} />
     </>
   );
 }

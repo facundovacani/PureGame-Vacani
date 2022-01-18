@@ -13,7 +13,12 @@ const ItemListContainer = ({greeting}) => {
             let resultadoAlerta = alerta.disabled = true;
             return resultadoAlerta
         }else if (valor > 0){
-            alert("Agregaste al carrito " + valor + " de "+ nombre );
+            if(valor === 1){
+                alert("Agregaste al carrito " + valor + " juego de "+ nombre );
+            }else{
+                alert("Agregaste al carrito " + valor + " juegos de "+ nombre );
+
+            }
         }
 
     }
