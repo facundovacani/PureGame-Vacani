@@ -345,6 +345,7 @@ main > section > article .agregarAlCarro > div>  span{
   text-align: center;  
   border: 1px solid var(--neon-rojo);
   font-size: 20px;
+  user-select: none;
 }
 
 main > section > article .agregarAlCarro > div>  span:active{
