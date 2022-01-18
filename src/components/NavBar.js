@@ -8,31 +8,31 @@ function NavBar(){
             <div className="contenedor-central-nav">
                 <div className="inicioNav">
                     <a href="/#" className="btn-nav">
-                        <span class="span1"></span>
-                        <span class="span2"></span>
-                        <span class="span3"></span>
-                        <span class="span4"></span>    
+                        <span className="span1"></span>
+                        <span className="span2"></span>
+                        <span className="span3"></span>
+                        <span className="span4"></span>    
                     Inicio</a>
                 </div>
                 <div className="div-lista">
                     <ul>
                         <li><a href="/#" className="btn-nav"> 
-                                <span class="span1"></span>
-                                <span class="span2"></span>
-                                <span class="span3"></span>
-                                <span class="span4"></span>
+                                <span className="span1"></span>
+                                <span className="span2"></span>
+                                <span className="span3"></span>
+                                <span className="span4"></span>
                             Acción</a></li>
                         <li><a href="/#" className="btn-nav">
-                                <span class="span1"></span>
-                                <span class="span2"></span>
-                                <span class="span3"></span>
-                                <span class="span4"></span>
+                                <span className="span1"></span>
+                                <span className="span2"></span>
+                                <span className="span3"></span>
+                                <span className="span4"></span>
                             Estrategía</a></li>
                         <li><a href="/#" className="btn-nav">
-                                <span class="span1"></span>
-                                <span class="span2"></span>
-                                <span class="span3"></span>
-                                <span class="span4"></span>
+                                <span className="span1"></span>
+                                <span className="span2"></span>
+                                <span className="span3"></span>
+                                <span className="span4"></span>
                             Terror</a></li>
                     </ul>
                 </div>
@@ -41,10 +41,10 @@ function NavBar(){
             <div className="div-carrito-login">
                 <CartWidget />
                 <a href="/#" className="btn-nav">
-                    <span class="span1"></span>
-                    <span class="span2"></span>
-                    <span class="span3"></span>
-                    <span class="span4"></span>
+                    <span className="span1"></span>
+                    <span className="span2"></span>
+                    <span className="span3"></span>
+                    <span className="span4"></span>
                 Login</a>
             </div>
         </nav>
