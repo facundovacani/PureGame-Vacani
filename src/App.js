@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <NavBar /> 
-      <ItemListContainer greeting={"Estos son los mejores juegos arcade del mercado"} />
+      <ItemListContainer greeting={"PureGame - Tu tienda favorita de juegos clásicos"} />
     </>
   );
 }
