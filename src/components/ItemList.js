@@ -10,12 +10,11 @@ const ItemList = ({ items }) => {
         });
 
         promesa.then(res => {
-            console.log(res)
             setLista(res)
         }).catch(err => console.log(err))
     },[])
     return (
-        <section>
+        <section className="seccion-item-list">
             {(lista.length > 0) ?
                 <>
                     {lista.map((item) => {
@@ -23,7 +22,7 @@ const ItemList = ({ items }) => {
                     })}                
                 </>: 
                 <>
-                    <h3 style={{fontSize:"30px", color:"var(--neon-verde)"}}> Cargando... </h3> 
+                    <h3 style={{fontSize:"30px", color:"var(--neon-verde)", margin:"auto"}}> Cargando... </h3> 
                 </>
             
         
