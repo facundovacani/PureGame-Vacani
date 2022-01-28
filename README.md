@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# PureGame
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una página de videojuegos clásicos. 
+
+La idea de esta app es que tenga un catálogo, en el cual se verá, muchos de los precursores de los videojuegos actuales. Los cuales escasean en stock a nivel mundial (los originales). 
+
+Tiene un enfoque retro. Ya que simboliza a las consolas retros de los años 80's, 90's.
+
+Elegí este contenido, ya que fueron los juegos con los que me crié. Y como queda poco stock de los mismos, quería mostrar esos juegos clásicos en una tienda ficticia. Intentaré que estos tengan más juegos de los mostrados a lo largo del proyecto. Tomé esta decisión por mi gran apego hacia esos juegos clásicos de mi niñez.
+
+## Dependencias extras. 
+
+Utilicé Font Awesome - React para el icono del carrito. Y para utilizar futuros iconos en la aplicación
 
 ## Available Scripts
 
@@ -39,32 +49,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
