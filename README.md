@@ -10,7 +10,10 @@ Elegí este contenido, ya que fueron los juegos con los que me crié. Y como que
 
 ## Dependencias extras. 
 
-Utilicé Font Awesome - React para el icono del carrito. Y para utilizar futuros iconos en la aplicación
+Utilicé Font Awesome - React para el icono del carrito. Y para utilizar futuros iconos en la aplicación.
+
+También utilicé una fuente de google fonts.
+
 
 ## Available Scripts
 

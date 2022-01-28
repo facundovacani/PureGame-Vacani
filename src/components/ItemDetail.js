@@ -9,10 +9,8 @@ const ItemDetail = ({item}) => {
 
     useEffect(()=>{
         let selector = document.getElementById("item-detail-image-select");
-
         selector.src = image;
         
-
     } ,[image])
 
     function select(){
@@ -61,7 +59,7 @@ const ItemDetail = ({item}) => {
                 
                 </div> 
                 <div id='item-detail-images-select'>
-                    <img id='item-detail-image-select' />
+                    <img id='item-detail-image-select' alt="Portada del juego seleccionado" />
                 </div>
             </div>
             <div className='item-detail-content'>

@@ -1,6 +1,5 @@
 import Item from "./Item";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 const ItemList = ({ items }) => {
     const [lista, setLista] = useState([])
@@ -25,7 +24,7 @@ const ItemList = ({ items }) => {
         <section className="seccion-item-list">
             {(loading) ?
                 <>
-                    <h3 style={{fontSize:"30px", color:"var(--neon-verde)", margin:"auto"}}> Cargando... </h3> 
+                    <h3 style={{fontSize:"30px", color:"var(--neon-celeste)", margin:"auto"}}> Cargando juegos... </h3> 
                 </>: 
                 <>
                     {lista.map((item) => {

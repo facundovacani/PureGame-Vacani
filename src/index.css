@@ -339,6 +339,7 @@ main {
   margin: 90px 0px 20px;
   width: 100%;
   text-align: center;
+  font-family: 'Inconsolata', monospace;
 }
 
 /*ItemListContainer*/
@@ -415,19 +416,22 @@ main > .seccion-item-list {
 
 }
 .item > .itemImagen > img {
-  background-size: cover;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+  object-position: center top;
+  -o-object-position: center top;
 }
 .item > span{
   background-color: var(--azul);
   height: 2px;
   width: 100%;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
 }
 .item:hover > span{
   background-color: var(--neon-celeste);
@@ -467,6 +471,8 @@ main > .seccion-item-list {
   display: inline-block;
   width: 100%;
   font-size: 0.95rem;
+  font-family: 'Inconsolata', monospace;
+
   color: var(--blanco);
   transition: all 0.2s;
   cursor: pointer;
@@ -485,79 +491,6 @@ main > .seccion-item-list {
 }
 
 /*Termina Item, ItemList e ItemListContainer*/
-/*Contador*/
-/* 
-.titulosEnArticle{
-  display: flex;
-  justify-content: space-between;
-
-}
-
-.titulosEnArticle > span{
-  margin: 3px 5px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--gris);
-}
-.agregarAlCarro > div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.agregarAlCarro > div>  span{
-  display: inline-block;
-  cursor: pointer;
-  background-color: white;
-  height: 35px;
-  width: 25px;
-  text-align: center;  
-  border: 1px solid var(--neon-rojo);
-  font-size: 20px;
-  user-select: none;
-}
-
-.agregarAlCarro > div>  span:active{
-  background-color: var(--gris-claro);
-}
-.agregarAlCarro > div > .menos{
-  border-end-start-radius: 5px;
-  border-start-start-radius: 5px;
-}.agregarAlCarro > div > .mas{
-  border-end-end-radius: 5px;
-  border-start-end-radius: 5px;
-}.agregarAlCarro > div > input {
-  text-align: center;
-  display: inline-block;
-  border-top: 1px solid var(--neon-rojo);
-  border-bottom: 1px solid var(--neon-rojo);
-  border-right: none;
-  border-left: none;
-  width: 60%;
-  height: 35px;
-}
-main > section > article .agregarAlCarro > button{
-  width: 100%;
-  height: 30px;
-  margin-top: 5px;
-  border: none;
-  border-end-end-radius: 10px;
-  border-end-start-radius: 10px;
-  color: var(--neon-celeste);
-  font-weight: 700;
-}
-.botonAgregarCarro:active, .botonAgregarCarro:focus, .botonAgregarCarro:hover{
-  cursor: pointer;
-}
-
-.botonAgregarCarro:hover{
-  background-color: var(--gris-claro);
-}
-.botonAgregarCarro:active{
-  border: 1px solid var(--gris-oscuro);
-} */
-
-/*Termina contador*/
 
 /*Empieza ItemDetailContainer*/
 .item-detail-container{
@@ -571,12 +504,12 @@ main > section > article .agregarAlCarro > button{
   display: flex;
   padding: 20px 20px;
   gap: 50px 50px;
-  height: 80%;
+  height: 90%;
   min-height: 600px;
-  max-height: 1200px;
+  max-height: 1000px;
   border-top: 1px solid var(--neon-violeta-claro);
   color: var(--neon-celeste);
-
+  
 }
 
 /*Images section*/
@@ -586,6 +519,7 @@ main > section > article .agregarAlCarro > button{
 .item-detail-images > .item-detail-images-collection{
   width: 100%;
   height: 20%;
+  min-width: 100px;
   margin: auto;
   overflow: hidden;
   display: flex;
@@ -593,8 +527,11 @@ main > section > article .agregarAlCarro > button{
 }
 .item-detail-images-collection > img{
   display: inline-block;
-  height: 100%;
-  width: 18%;
+  width: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+  object-position: center;
+  -o-object-position: center;
   min-width: 92px;
   max-width: 108px;
   max-height: 83px;
@@ -616,8 +553,8 @@ main > section > article .agregarAlCarro > button{
 }
 
 .item-detail-images>#item-detail-images-select{
-  height: 85%;
-  width: 90%;
+  height: 80%;
+  width: 80%;
   margin: auto;
   min-width: 260px;
   max-height: 550px;
@@ -627,18 +564,22 @@ main > section > article .agregarAlCarro > button{
   overflow: hidden;
 }
 .item-detail-images>#item-detail-images-select > img{
-  width: 70%;
+  width: 100%;
   max-height: 480px;
+  object-fit: cover;
+  object-position: center;
   box-shadow: 0px 0px 20px var(--neon-celeste);
 }
 
 /*Item Detail Content*/
 .item-detail > .item-detail-content{
+  font-family: 'Inconsolata', monospace;
   width: 50%;
   text-align: start;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 400px;
   
   
 }
@@ -667,10 +608,21 @@ main > section > article .agregarAlCarro > button{
 }
 
 
+/*Item Count*/
+
+.agregarAlCarro {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 .agregarAlCarro > div{
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 60%;
 }
 
 .agregarAlCarro > div>  span{
@@ -678,7 +630,7 @@ main > section > article .agregarAlCarro > button{
   cursor: pointer;
   background-color: white;
   height: 35px;
-  width: 25px;
+  width: 35px;
   text-align: center;  
   border: 1px solid var(--neon-celeste);
   font-size: 20px;
@@ -689,25 +641,29 @@ main > section > article .agregarAlCarro > button{
   background-color: var(--gris-claro);
 }
 .agregarAlCarro > div > .menos{
-  border-end-start-radius: 5px;
   border-start-start-radius: 5px;
-}.agregarAlCarro > div > .mas{
-  border-end-end-radius: 5px;
+}
+.agregarAlCarro > div > .mas{
   border-start-end-radius: 5px;
-}.agregarAlCarro > div > input {
+}
+.agregarAlCarro > div > input {
   text-align: center;
   display: inline-block;
+  background-color: var(--neon-violeta-oscuro);
+  color: var(--neon-celeste);
   border-top: 1px solid var(--neon-celeste);
   border-bottom: 1px solid var(--neon-celeste);
+  font-size: 18px;
   border-right: none;
   border-left: none;
-  width: 60%;
+  width: 85%;
   height: 35px;
 }
-.agregarAlCarro > button{
-  width: 100%;
+.agregarAlCarro > .botonAgregarCarro{
+  width: 60%;
+  font-family: 'Inconsolata', monospace;
+  font-size: 18px;
   height: 30px;
-  margin-top: 5px;
   border: none;
   border-end-end-radius: 10px;
   border-end-start-radius: 10px;
@@ -715,14 +671,24 @@ main > section > article .agregarAlCarro > button{
   color: var(--neon-celeste);
   font-weight: 700;
   background: transparent;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
 }
 .botonAgregarCarro:active, .botonAgregarCarro:focus, .botonAgregarCarro:hover{
   cursor: pointer;
+  background-color: var(--neon-celeste);
+  color: var(--neon-verde);
 }
 
-.botonAgregarCarro:hover{
-  background-color: var(--neon-verde);
-}
 .botonAgregarCarro:active{
-  border: 1px solid var(--gris-oscuro);
+  transform: scale(95%);
+  -webkit-transform: scale(95%);
+  -moz-transform: scale(95%);
+  -ms-transform: scale(95%);
+  -o-transform: scale(95%);
 }
+
+/*-----------------------------------------------------*/
