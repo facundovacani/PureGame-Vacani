@@ -5,13 +5,13 @@ import ItemCount from "./ItemCount"
 const ItemDetail = ({item}) => {  
     let string = /-/g;
     let titulo = item.title.replace(string, " ")
-    console.log(titulo)
     const [image, setImage] = useState(item.images[0]);
 
     useEffect(()=>{
         let selector = document.getElementById("item-detail-image-select");
 
         selector.src = image;
+        
 
     } ,[image])
 

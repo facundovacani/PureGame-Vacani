@@ -31,5 +31,5 @@ const Item = ({item}) => {
     </Link>
   );
 };
-
+/* Intentar mandar en el link, la descripción, el titulo, stock,etc. */
 export default Item;

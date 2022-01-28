@@ -31,9 +31,9 @@ function App() {
 
                 </main>
               </Route>
-              <Route path="/categoria/:categoria" >
+              <Route path="/categoria/:categoriaId" >
                 <main>
-                  
+                  <ItemListContainer />
                 </main>
               </Route>
 

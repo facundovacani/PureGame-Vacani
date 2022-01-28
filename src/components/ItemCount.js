@@ -14,7 +14,6 @@ const ItemCount = ({initial, stock, nombre, onAdd}) => {
         }
     }
 
-    let guion = /-/g;
     return (
         <>
             <div className='agregarAlCarro'>

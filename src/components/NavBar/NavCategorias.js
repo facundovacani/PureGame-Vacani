@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const NavCategorias = ({categoria}) => {
     return (<>
-        <li><Link to={"/categoria/"+categoria} className="btn-nav"> 
+        <li><Link to={`/categoria/${categoria}`} className="btn-nav"> 
                 <span className="span1"></span>
                 <span className="span2"></span>
                 <span className="span3"></span>
