@@ -4,6 +4,7 @@ import ItemListContainer from './components/ItemListContainer';
 import { BrowserRouter,Switch, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import fondo from "./FondoConTitulo-min.jpg";
+import Cart from './components/Cart';
 
 
 function App() {
@@ -34,6 +35,11 @@ function App() {
               <Route path="/categoria/:categoriaId" >
                 <main>
                   <ItemListContainer />
+                </main>
+              </Route>
+              <Route path="/cart" >
+                <main>
+                  <Cart />
                 </main>
               </Route>
 
