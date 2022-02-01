@@ -1,12 +1,14 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import ItemCount from "./ItemCount"
+import AddedToCart from './AddedToCart';
 
 const ItemDetail = ({item}) => {  
     let string = /-/g;
     let titulo = item.title.replace(string, " ")
     const [image, setImage] = useState(item.images[0]);
-
+    const [add, setAdd] = useState(false);
+    const [buy, setBuy] = useState(0)
     useEffect(()=>{
         let selector = document.getElementById("item-detail-image-select");
         selector.src = image;
@@ -36,9 +38,12 @@ const ItemDetail = ({item}) => {
             
             if(valor === "1"){
                 alert("Agregaste al carrito el juego de "+ nombre.replace(guion, " "));
+                setAdd(true);
+                setBuy(valor)
             }else if(valor > 1){
                 alert("Agregaste al carrito " + valor + " juegos de "+ nombre.replace(guion, " ") );
-
+                setAdd(true)
+                setBuy(valor)
             }
         }
 
@@ -76,10 +81,18 @@ const ItemDetail = ({item}) => {
 
                 </div>
                 <div>
-                    <span>Stock Disponible: {item.stock}</span>
-                    <article>
-                        <ItemCount stock={item.stock} nombre={item.title} initial={inicial} onAdd={onAdd} />
-                    </article>
+                    <span>Stock Disponible: {item.stock - buy}</span>
+                    {
+                        (!add)? 
+                        <>
+                            <article>
+                                <ItemCount stock={item.stock} nombre={item.title} initial={inicial} onAdd={onAdd} />
+                            </article>
+                        </> :
+                        
+                        <AddedToCart titulo={titulo} compra={buy}/>
+                        
+                    }
 
                 </div>
 
