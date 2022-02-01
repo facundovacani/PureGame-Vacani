@@ -37,7 +37,7 @@ function App() {
                   <ItemListContainer />
                 </main>
               </Route>
-              <Route path="/cart" >
+              <Route exact path="/cart" >
                 <main>
                   <Cart />
                 </main>
