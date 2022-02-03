@@ -1,14 +1,16 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import ItemCount from "./ItemCount"
 import AddedToCart from './AddedToCart';
+import { contextApp } from './context/CartContext';
 
 const ItemDetail = ({item}) => {  
-    let string = /-/g;
-    let titulo = item.title.replace(string, " ")
+    const {addItem, numCart,setNumCart} = useContext(contextApp)
     const [image, setImage] = useState(item.images[0]);
     const [add, setAdd] = useState(false);
     const [buy, setBuy] = useState(0)
+    let string = /-/g;
+    let titulo = item.title.replace(string, " ")
+
     useEffect(()=>{
         let selector = document.getElementById("item-detail-image-select");
         selector.src = image;
@@ -17,7 +19,6 @@ const ItemDetail = ({item}) => {
 
     function select(){
         let pictures = document.querySelectorAll(".item-detail-images-collection-select")
-        console.log(pictures)
         pictures.forEach((item) => {
             item.addEventListener("mouseover", ()=>{
                 setImage(item.src)
@@ -26,24 +27,24 @@ const ItemDetail = ({item}) => {
         
     }
 
-    function onAdd (nombre){
-        let valor = document.getElementById("item"+nombre).value;
-        let alerta = document.getElementById("alerta"+ nombre);
-
+    function onAdd (item, nombre){
+        let valor = parseInt(document.getElementById("item"+item.title).value);
+        let alerta = document.getElementById("alerta"+ item.title);
+        let sum = valor;
         if(valor === null){
             let resultadoAlerta = alerta.disabled = true;
             return resultadoAlerta
-        }else if (valor > 0){
-            let guion = /-/g
-            
-            if(valor === "1"){
-                alert("Agregaste al carrito el juego de "+ nombre.replace(guion, " "));
+        }else if (valor > 0){            
+            if(valor === 1){
                 setAdd(true);
+                addItem(item, valor ,nombre );
                 setBuy(valor)
-            }else if(valor > 1){
-                alert("Agregaste al carrito " + valor + " juegos de "+ nombre.replace(guion, " ") );
+                setNumCart(numCart + sum)
+            }else if(valor > 1){                
                 setAdd(true)
+                addItem(item, valor , nombre);
                 setBuy(valor)
+                setNumCart(numCart + sum)
             }
         }
 
@@ -68,27 +69,31 @@ const ItemDetail = ({item}) => {
                 </div>
             </div>
             <div className='item-detail-content'>
-                <div className='item-detail-content-title-and-console'>
-                    <h3>{titulo}</h3>
+                <div>
+                    <div className='item-detail-content-title-and-console'>
+                        <h3>{titulo}</h3>
 
-                    <p>Consola: <span>{item.consola}</span></p>
-                    <p>Precio: <span>{item.price} USD</span></p>
+                        <p>Consola: <span>{item.consola}</span></p>
+                        <p>Precio: <span>{item.price} USD</span></p>
+                        <p>Categoría: <span>{item.categoria}</span></p>
 
-                </div>
-                <div className='item-detail-content-description'>
-                    {/* <button id='show-hidden-description'>Ver Descripción</button> */}
-                    <p id='description-item-content'>{item.description}</p>
+
+                    </div>
+                    <div className='item-detail-content-description'>
+                        {/* <button id='show-hidden-description'>Ver Descripción</button> */}
+                        <p id='description-item-content'>{item.description}</p>
+
+                    </div>
 
                 </div>
                 <div>
                     <span>Stock Disponible: {item.stock - buy}</span>
                     {
-                        (!add)? 
-                        <>
-                            <article>
-                                <ItemCount stock={item.stock} nombre={item.title} initial={inicial} onAdd={onAdd} />
-                            </article>
-                        </> :
+                        (!add)?                         
+                        <article>
+                            <ItemCount item={item} titulo={titulo} initial={inicial} onAdd={onAdd} />
+                        </article>
+                        :
                         
                         <AddedToCart titulo={titulo} compra={buy}/>
                         

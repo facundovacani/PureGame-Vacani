@@ -31,7 +31,7 @@ function NavBar(){
                 </div>
                 <div className="div-lista">
                     <ul>
-                        {categorias.map((categoria) => <NavCategorias categoria={categoria} /> )}
+                        {categorias.map((categoria,i) => <NavCategorias key={i} categoria={categoria} /> )}
                     </ul>
                 </div>
             </div>

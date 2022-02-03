@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 
-const ItemCount = ({initial, stock, nombre, onAdd}) => {    
+const ItemCount = ({initial ,item , titulo, onAdd}) => {    
     const [cantidad, setCantidad] = useState(initial);
 
     function addOne(){
-        if(cantidad < stock){
+        if(cantidad < item.stock){
             setCantidad(cantidad + 1);
         }
     }
@@ -19,11 +19,11 @@ const ItemCount = ({initial, stock, nombre, onAdd}) => {
             <div className='agregarAlCarro'>
                 <div>
                     <span className='menos' onClick={()=> decressOne()}>-</span>
-                    <input className='valor' id={`item${nombre}`} type="number" value={cantidad} readOnly/>
+                    <input className='valor' id={`item${item.title}`} type="number" value={cantidad} readOnly/>
                     <span className='mas' onClick={()=> addOne()}>+</span><br />
 
                 </div>
-                <button id={'alerta'+nombre} className='botonAgregarCarro' onClick={()=> onAdd(nombre)}>Agregar al carrito</button>
+                <button id={'alerta'+item.title} className='botonAgregarCarro' onClick={()=> onAdd(item, titulo)}>Agregar al carrito</button>
 
             </div>
 

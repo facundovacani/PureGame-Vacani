@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
                 return setProducto(productoFinal)
             }).catch(err => console.log(err)) 
 
-        } ,2000)
+        } ,1000)
       
     } ,[itemId])
     return(
@@ -36,7 +36,7 @@ const ItemDetailContainer = () => {
                 <>
                     <section className='item-detail-container'>
                         {
-                            producto.map(item => <ItemDetail item={item} />)   
+                            producto.map(item => <ItemDetail key={item.id} item={item} />)   
                         }
                     </section>
                 </>:

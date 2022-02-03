@@ -12,7 +12,7 @@ const ItemListContainer = ({greeting}) => {
 
         if(categoriaId){
             let filtrado = productos.filter(item => item.categoria === categoriaId);
-            console.log(filtrado, categoriaId);
+            // console.log(filtrado, categoriaId);
             setItemsList(filtrado)
 
         }else{
