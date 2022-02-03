@@ -48,6 +48,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--azul-oscuro);
+  background: radial-gradient(circle at top right ,var(--azul-muy-claro) 0% 2%,var(--azul-claro) 8%, var(--azul-medio)20%, var(--azul-oscuro) 70%, #001620) no-repeat ;
+  background-attachment: fixed;
 }
 
 code {
@@ -349,11 +351,11 @@ main {
 main > .seccion-item-list {
   padding: 30px 0px;
   margin: 0 auto;
-  width: 85%;
+  width: 70%;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 20px 60px;
+  gap: 20px 20px;
 }
 
 .seccion-item-list > article{
@@ -541,17 +543,18 @@ main > .seccion-item-list {
   margin: auto;
   overflow: hidden;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: flex-end;
 }
 .item-detail-images-collection > img{
   display: inline-block;
+  cursor: pointer;
   object-fit: cover;
   -o-object-fit: cover;
   object-position: top center;
   -o-object-position: top center;
-  width: 68px;
-  height: 68px;
+  width: 60px;
+  height: 60px;
   border: 1px solid var(--neon-celeste);
   padding: 5px;
   box-shadow: 0px 0px 10px var(--neon-celeste);
@@ -571,7 +574,7 @@ main > .seccion-item-list {
 
 .item-detail-images>#item-detail-images-select{
   height: 100%;
-  width: 70%;
+  width: 80%;
   margin: 40px auto 0;
   min-width: 260px;
   display: flex;
@@ -677,7 +680,7 @@ main > .seccion-item-list {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 1rem;
   transition: 0.2s all;
 }
 .boton-agregado-carro:hover{
@@ -685,6 +688,7 @@ main > .seccion-item-list {
 }
 .boton-agregado-carro:hover > a{
   color: var(--neon-celeste);
+  background-color: var(--neon-verde);
 }
 
 
@@ -712,8 +716,8 @@ main > .seccion-item-list {
   display: inline-block;
   background-color: var(--blanco);
   color: var(--neon-violeta-oscuro);
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -739,7 +743,7 @@ main > .seccion-item-list {
   border-right: none;
   border-left: none;
   width: 85%;
-  height: 35px;
+  height: 30px;
 }
 
 .agregarAlCarro > .botonAgregarCarro{
@@ -775,3 +779,14 @@ main > .seccion-item-list {
 
 
 /*-----------------------------------------------------*/
+
+/*Carrito*/ 
+
+main > table {
+  width: 80%;
+  min-width: 260px;
+}
+
+main > table tr {
+  height: 80px;
+}

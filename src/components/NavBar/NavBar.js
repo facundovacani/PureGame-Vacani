@@ -1,10 +1,12 @@
 import CartWidget from "./CartWidget";
 import logo from "./../../títuloLower-min.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import NavCategorias from "./NavCategorias";
 import {Link} from "react-router-dom";
+import { contextApp } from "../context/CartContext";
 function NavBar(){
     const [categorias, setCategorias] = useState([]);
+    const {numCart} = useContext(contextApp)
     useEffect(()=>{
         setTimeout(()=>{
             setCategorias(["Rol","Deporte", "Aventura"])
@@ -37,7 +39,10 @@ function NavBar(){
             </div>
 
             <div className="div-carrito-login">
-                <CartWidget />
+                {
+                    (numCart > 0)? <CartWidget />: <></>
+                }
+                
                 <Link to="/#" className="btn-nav">
                     <span className="span1"></span>
                     <span className="span2"></span>

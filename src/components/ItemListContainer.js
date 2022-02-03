@@ -24,7 +24,7 @@ const ItemListContainer = ({greeting}) => {
     
     return (
         <>        
-            <h2 style={{fontSize: "3rem",
+            <h2 style={{fontSize: "2.4rem",
              color: "var(--neon-celeste)",
              textShadow: "0px 3px 5px var(--azul-oscuro)",
              letterSpacing: "3px",
