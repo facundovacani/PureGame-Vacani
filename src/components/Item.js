@@ -6,35 +6,13 @@ import ItemCount from './ItemCount';
 
 const Item = ({ item }) => {
 
-  const { addItem, setNumCart, numCart } = useContext(contextApp);
+  const { onAdd } = useContext(contextApp);
   const [add, setAdd] = useState(false);
   const [buy, setBuy] = useState(0)
-  function onAdd(item, nombre) {
-    let valor = parseInt(document.getElementById("item" + item.title).value);
-    let alerta = document.getElementById("alerta" + item.title);
-    let sum = valor;
-    if (valor === null) {
-      let resultadoAlerta = alerta.disabled = true;
-      return resultadoAlerta
-    } else if (valor > 0) {
-      if (valor === 1) {
-        addItem(item, valor, nombre);
-        setAdd(true);
-        setBuy(valor);
-        setNumCart(numCart + sum)
-      } else if (valor > 1) {
-        addItem(item, valor, nombre);
-        setAdd(true);
-        setBuy(valor);
-        setNumCart(numCart + sum)
-      }
-    }
-
-  }
+  
 
   let string = /-/g;
   let titulo = item.title.replace(string, " ");
-  let inicial = 0;
 
   return (
     <article>
@@ -58,7 +36,7 @@ const Item = ({ item }) => {
           </div>
         </Link>
         {(!add) ?
-          <ItemCount item={item} titulo={titulo} initial={inicial} onAdd={onAdd} />
+          <ItemCount item={item} titulo={titulo} buy={buy} onAdd={onAdd} setAdd={setAdd} setBuy={setBuy} />
           :
           <AddedToCart titulo={titulo} compra={buy} />
         }

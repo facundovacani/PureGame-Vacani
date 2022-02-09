@@ -239,16 +239,33 @@ code {
   transition-delay: 0.75s;
 }
 
+.listas-categorias{
+  background-color: var(--neon-violeta-muy-oscuro);
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: 90px;
+  width: 400px;
+}
+.listas-categorias.active{
+  display: initial;
+  
+}
+
 /*---------------------------------*/
 /*Carrito*/
 
 .div-carrito-login {
-  width: 180px;
+  width: 200px;
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+}
+
+.div-carrito-login .btn-nav {
+  width: 100px;
 }
 
 .div-carrito-login > div{
@@ -286,12 +303,17 @@ code {
   -o-border-radius: 50%;
 }
 .conteo-carrito{ 
-  font-weight: 500;
-  font-size: 1.1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
   position: absolute;
-  top: -2px;
+  top: 5px;
   left: 3px;
   color: var(--neon-celeste);
+}
+
+.btn-nav:hover .conteo-carrito{
+  transition-delay: 1s;
+  color: var(--neon-violeta-muy-oscuro);
 }
 
 
@@ -359,9 +381,9 @@ main > .seccion-item-list {
 }
 
 .seccion-item-list > article{
-  min-width: 250px;
-  width: 15%;
-  max-width: 275px;
+  min-width: 275px;
+  width: 20%;
+  max-width: 295px;
   height: 400px;
 
 }
@@ -377,14 +399,14 @@ main > .seccion-item-list {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(180deg, var(--azul-muy-claro) 65% ,var(--azul-claro)90%, var(--azul-medio) );
-
-  transition: all 0.2s;
+  transition: all 0.1s;
   cursor: pointer;
+  position: relative;
   font-size: 0.95rem;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -ms-transition: all 0.1s;
+  -o-transition: all 0.1s;
 }
 
 .item:hover{
@@ -441,6 +463,11 @@ main > .seccion-item-list {
 .item:hover > a >.itemImagen > img{
   filter: brightness(40%);
   -webkit-filter: brightness(40%);
+  transform: scale(105%);
+  -webkit-transform: scale(105%);
+  -moz-transform: scale(105%);
+  -ms-transform: scale(105%);
+  -o-transform: scale(105%);
 }
 .item > a > .itemImagen > span{
   position: absolute;
@@ -481,10 +508,19 @@ main > .seccion-item-list {
 
 .item:hover > a > .itemDescripcion{
   height: 25%;
+  padding-bottom: 4px;
 }
 
 .item > a > .itemDescripcion > h4{
   font-size: 1.3rem;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+.item:hover > a > .itemDescripcion > h4{
+  font-size: 1.1rem;
 }
 .item > a >.itemDescripcion > .stock-precio {
   display: flex;
@@ -523,6 +559,7 @@ main > .seccion-item-list {
   display: flex;
   gap: 50px 50px;
   height: 95%;
+  min-height: 570px;
   max-height: 1000px;
   border-top: 1px solid var(--neon-violeta-claro);
   color: var(--neon-celeste);
@@ -598,7 +635,6 @@ main > .seccion-item-list {
   flex-direction: row;
   justify-content: space-between;
   min-height: 400px;
-  overflow: auto;
   max-height: 560px;
 }
 
@@ -624,11 +660,9 @@ main > .seccion-item-list {
 
 .item-detail-container .item-detail-content-description{
   font-size: 1rem;
-  width: 80%;
 }
 
 .item-detail-content > div:first-child {
-  width: 60%;
   padding-top: 30px;
 }
 
@@ -639,7 +673,7 @@ main > .seccion-item-list {
   flex-direction: column;
   justify-content: flex-end;
   padding-left: 20px;
-  max-height: 440px;
+  max-height: 550px;
 }
 
 .item-detail-content > div:last-child > span {
@@ -653,6 +687,9 @@ main > .seccion-item-list {
 }
 .item-detail-content > div:last-child .boton-agregado-carro {
   margin: 20px auto 0;
+}
+.item-detail-content > div:last-child .botonAgregarCarro:hover{
+  color: var(--neon-verde);
 }
 /*AddedToCart*/
 
@@ -697,7 +734,7 @@ main > .seccion-item-list {
 
 .agregarAlCarro {
   display: flex;
-  min-width: 160px;
+  min-width: 200px;
   margin: auto;
   max-width: 460px;
   justify-content: center;
@@ -716,8 +753,8 @@ main > .seccion-item-list {
   display: inline-block;
   background-color: var(--blanco);
   color: var(--neon-violeta-oscuro);
-  height: 30px;
-  width: 30px;
+  height: 32px;
+  width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -735,7 +772,7 @@ main > .seccion-item-list {
 .agregarAlCarro > div > input {
   text-align: center;
   display: inline-block;
-  background-color: var(--neon-violeta-oscuro);
+  background-color: var(--neon-violeta-muy-oscuro);
   color: var(--blanco);
   border-top: 1px solid var(--azul);
   border-bottom: 1px solid var(--azul);
@@ -743,7 +780,7 @@ main > .seccion-item-list {
   border-right: none;
   border-left: none;
   width: 85%;
-  height: 30px;
+  height: 34px;
 }
 
 .agregarAlCarro > .botonAgregarCarro{
@@ -782,11 +819,84 @@ main > .seccion-item-list {
 
 /*Carrito*/ 
 
-main > table {
-  width: 80%;
-  min-width: 260px;
+.title-cart{
+  font-size: 30px;
+  margin-top: 100px;
+  letter-spacing: 4px;
+  color: var(--neon-celeste);
 }
 
-main > table tr {
+main > table {
+  width: 80%;
+  min-width: 768px;
+  margin: 50px auto 20px;
+  background-color: var(--neon-celeste);
+}
+main > table th {
   height: 80px;
+  color: var(--neon-celeste);
+}
+main > table tr {
+  height: 100px;
+  width: 100%;
+  font-size: 19px;
+  color: var(--neon-celeste);
+
+}
+main > table > thead tr{
+  background-color: var(--neon-violeta-muy-oscuro);
+}
+main > table > tbody tr:nth-child(odd){
+  background-color: var(--azul-oscuro);
+}
+main > table > tbody tr:nth-child(even){
+  background-color: var(--azul-medio) ;
+}
+
+main > table > tbody > tr > td {
+  height: 120px;
+  color: var(--blanco);
+}
+
+main > table > tbody > tr > td > img{
+  height: 100%;
+  width: 120px;
+  padding: 5px;
+}
+
+
+main > table > tbody .fa-times-circle {
+  color:var(--rojo);
+  transform: scale(200%);
+  -webkit-transform: scale(200%);
+  -moz-transform: scale(200%);
+  -ms-transform: scale(200%);
+  -o-transform: scale(200%);
+}
+
+main > table > tbody .fa-times-circle:hover { 
+  cursor: pointer;
+}
+
+main > table > tfoot tr{
+  background-color: var(--neon-violeta-muy-oscuro);
+}
+
+.borrar-carrito{
+  width: 50%;
+  height: 50px;
+  background-color: var(--rojo);
+  border: 1px solid var(--neon-celeste);
+}
+
+.borrar-carrito:hover{
+  cursor: pointer;  
+}
+
+.borrar-carrito:active{
+  transform: scale(95%);
+  -webkit-transform: scale(95%);
+  -moz-transform: scale(95%);
+  -ms-transform: scale(95%);
+  -o-transform: scale(95%);
 }

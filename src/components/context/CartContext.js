@@ -20,11 +20,35 @@ const CartContext = ({ children }) => {
                     id: item.id,
                     name: title,
                     price: item.price,
-                    quantity 
+                    quantity,
+                    picture: item.pictureUrl
                 } 
             ])
         }
     }
+
+    function onAdd(item, nombre, setAdd, setBuy) {
+        let valor = parseInt(document.getElementById("item" + item.title).value);
+        let alerta = document.getElementById("alerta" + item.title);
+        let sum = valor;
+        if (valor === null) {
+          let resultadoAlerta = alerta.disabled = true;
+          return resultadoAlerta
+        } else if (valor > 0) {
+          if (valor === 1) {
+            addItem(item, valor, nombre);
+            setAdd(true);
+            setBuy(valor);
+            setNumCart(numCart + sum)
+          } else if (valor > 1) {
+            addItem(item, valor, nombre);
+            setAdd(true);
+            setBuy(valor);
+            setNumCart(numCart + sum)
+          }
+        }
+    
+      }
 
     const isInCart = (id) =>{
         return cart.some(items => items.id === id)
@@ -41,8 +65,17 @@ const CartContext = ({ children }) => {
         setNumCart(0)
     }
 
+    function total(){
+        let total = cart.map(item => item.price * item.quantity).reduce((a,b)=> a + b);
+        return total;
+    }
+
+    const totalCantidad = () => {
+        let total = cart.map(item => item.quantity).reduce((a,b)=> a + b)
+        return total;
+    }
     return (
-        <contextApp.Provider value={{cart, addItem, removeItem, clear, numCart, setNumCart}}>
+        <contextApp.Provider value={{cart, addItem, removeItem, clear, numCart, setNumCart, onAdd, total, totalCantidad}}>
             {children}
         </contextApp.Provider>
     );

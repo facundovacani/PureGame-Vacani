@@ -1,18 +1,21 @@
 import React, { useContext } from 'react';
 import { contextApp } from '../context/CartContext';
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faTimesCircle as cruz } from '@fortawesome/free-solid-svg-icons';
 
-const ItemCart = ({title,quantity, id, price}) => {
+const ItemCart = ({item}) => {
     const {removeItem} = useContext(contextApp);
 
   return (
-    <tr>  
-        <td>{title}</td>
-        <td>{quantity}</td>
+    <tr> 
+        <td><img src={item.picture} alt={item.title} /></td>
+        <td><h4>{item.name}</h4></td>
+        <td>{item.quantity}</td>        
+        <td>{item.price} USD</td>
+        <td>{item.price * item.quantity} USD</td>
         <td>
-            <button onClick={()=>removeItem(id, quantity)}>Borrar</button>
+          <FontAwesomeIcon icon={cruz} onClick={()=>removeItem(item.id, item.quantity)} />
         </td>
-        <td>{price}</td>
-        <td>{price * quantity}</td>
     </tr>
   );
 };

@@ -4,10 +4,10 @@ import AddedToCart from './AddedToCart';
 import { contextApp } from './context/CartContext';
 
 const ItemDetail = ({item}) => {  
-    const {addItem, numCart,setNumCart} = useContext(contextApp)
+    const {onAdd} = useContext(contextApp)
     const [image, setImage] = useState(item.images[0]);
     const [add, setAdd] = useState(false);
-    const [buy, setBuy] = useState(0)
+    const [buy, setBuy] = useState(1)
     let string = /-/g;
     let titulo = item.title.replace(string, " ")
 
@@ -17,51 +17,16 @@ const ItemDetail = ({item}) => {
         
     } ,[image])
 
-    function select(){
-        let pictures = document.querySelectorAll(".item-detail-images-collection-select")
-        pictures.forEach((item) => {
-            item.addEventListener("mouseover", ()=>{
-                setImage(item.src)
-            })
-        })
-        
-    }
-
-    function onAdd (item, nombre){
-        let valor = parseInt(document.getElementById("item"+item.title).value);
-        let alerta = document.getElementById("alerta"+ item.title);
-        let sum = valor;
-        if(valor === null){
-            let resultadoAlerta = alerta.disabled = true;
-            return resultadoAlerta
-        }else if (valor > 0){            
-            if(valor === 1){
-                setAdd(true);
-                addItem(item, valor ,nombre );
-                setBuy(valor)
-                setNumCart(numCart + sum)
-            }else if(valor > 1){                
-                setAdd(true)
-                addItem(item, valor , nombre);
-                setBuy(valor)
-                setNumCart(numCart + sum)
-            }
-        }
-
-    }
-    let inicial = 1;
-
-
 
 
     return (
         <article className='item-detail'>
             <div className="item-detail-images">
-                <div className='item-detail-images-collection' onMouseOver={() => select()}>
-                    <img className='item-detail-images-collection-select' src={item.images[0]} alt='Imagen seleccionable 1'/>
-                    <img className='item-detail-images-collection-select' src={item.images[1]} alt='Imagen seleccionable 2'/>
-                    <img className='item-detail-images-collection-select' src={item.images[2]} alt='Imagen seleccionable 3'/>
-                    <img className='item-detail-images-collection-select' src={item.images[3]} alt='Imagen seleccionable 4'/>
+                <div className='item-detail-images-collection'>
+                    <img className='item-detail-images-collection-select' src={item.images[0]} alt='Imagen seleccionable 1' onMouseOver={()=> setImage(item.images[0])}/>
+                    <img className='item-detail-images-collection-select' src={item.images[1]} alt='Imagen seleccionable 2' onMouseOver={()=> setImage(item.images[1])}/>
+                    <img className='item-detail-images-collection-select' src={item.images[2]} alt='Imagen seleccionable 3' onMouseOver={()=> setImage(item.images[2])}/>
+                    <img className='item-detail-images-collection-select' src={item.images[3]} alt='Imagen seleccionable 4' onMouseOver={()=> setImage(item.images[3])}/>
                 
                 </div> 
                 <div id='item-detail-images-select'>
@@ -91,7 +56,7 @@ const ItemDetail = ({item}) => {
                     {
                         (!add)?                         
                         <article>
-                            <ItemCount item={item} titulo={titulo} initial={inicial} onAdd={onAdd} />
+                            <ItemCount item={item} titulo={titulo} buy={buy} onAdd={onAdd} setAdd={setAdd} setBuy={setBuy} />
                         </article>
                         :
                         
