@@ -419,10 +419,7 @@ main > .seccion-item-list {
   height: 100%;
   -o-transform: scale(105%);
 }
-.item:active{
-  box-shadow: inset 0px 0px 20px var(--neon-celeste);
 
-}
 .item > a{
   text-decoration: none;
   color: var(--blanco);

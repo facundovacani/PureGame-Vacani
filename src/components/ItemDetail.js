@@ -8,8 +8,7 @@ const ItemDetail = ({item}) => {
     const [image, setImage] = useState(item.images[0]);
     const [add, setAdd] = useState(false);
     const [buy, setBuy] = useState(1)
-    let string = /-/g;
-    let titulo = item.title.replace(string, " ")
+
 
     useEffect(()=>{
         let selector = document.getElementById("item-detail-image-select");
@@ -36,9 +35,9 @@ const ItemDetail = ({item}) => {
             <div className='item-detail-content'>
                 <div>
                     <div className='item-detail-content-title-and-console'>
-                        <h3>{titulo}</h3>
+                        <h3>{item.title}</h3>
 
-                        <p>Consola: <span>{item.consola}</span></p>
+                        <p>Consola: <span>{item.console}</span></p>
                         <p>Precio: <span>{item.price} USD</span></p>
                         <p>Categoría: <span>{item.categoria}</span></p>
 
@@ -56,11 +55,11 @@ const ItemDetail = ({item}) => {
                     {
                         (!add)?                         
                         <article>
-                            <ItemCount item={item} titulo={titulo} buy={buy} onAdd={onAdd} setAdd={setAdd} setBuy={setBuy} />
+                            <ItemCount item={item} buy={buy} onAdd={onAdd} setAdd={setAdd} setBuy={setBuy} />
                         </article>
                         :
                         
-                        <AddedToCart titulo={titulo} compra={buy}/>
+                        <AddedToCart titulo={item.title} compra={buy}/>
                         
                     }
 

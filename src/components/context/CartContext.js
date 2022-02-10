@@ -27,21 +27,21 @@ const CartContext = ({ children }) => {
         }
     }
 
-    function onAdd(item, nombre, setAdd, setBuy) {
-        let valor = parseInt(document.getElementById("item" + item.title).value);
-        let alerta = document.getElementById("alerta" + item.title);
+    function onAdd(item, setAdd, setBuy) {
+        let valor = parseInt(document.getElementById("item" + item.id).value);
+        let alerta = document.getElementById("alerta" + item.id);
         let sum = valor;
         if (valor === null) {
           let resultadoAlerta = alerta.disabled = true;
           return resultadoAlerta
         } else if (valor > 0) {
           if (valor === 1) {
-            addItem(item, valor, nombre);
+            addItem(item, valor, item.title);
             setAdd(true);
             setBuy(valor);
             setNumCart(numCart + sum)
           } else if (valor > 1) {
-            addItem(item, valor, nombre);
+            addItem(item, valor, item.title);
             setAdd(true);
             setBuy(valor);
             setNumCart(numCart + sum)

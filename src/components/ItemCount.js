@@ -1,4 +1,4 @@
-const ItemCount = ({buy ,item , titulo, onAdd, setAdd, setBuy}) => {    
+const ItemCount = ({buy ,item , onAdd, setAdd, setBuy}) => {    
 
     function addOne(){
         if(buy < item.stock){
@@ -16,11 +16,11 @@ const ItemCount = ({buy ,item , titulo, onAdd, setAdd, setBuy}) => {
             <div className='agregarAlCarro'>
                 <div>
                     <span className='menos' onClick={()=> decressOne()}>-</span>
-                    <input className='valor' id={`item${item.title}`} type="number" value={buy} readOnly/>
+                    <input className='valor' id={`item${item.id}`} type="number" value={buy} readOnly/>
                     <span className='mas' onClick={()=> addOne()}>+</span><br />
 
                 </div>
-                <button id={'alerta'+item.title} className='botonAgregarCarro' onClick={()=> onAdd(item, titulo, setAdd, setBuy)}>Agregar al carrito</button>
+                <button id={'alerta'+item.id} className='botonAgregarCarro' onClick={()=> onAdd(item, setAdd, setBuy)}>Agregar al carrito</button>
 
             </div>
 

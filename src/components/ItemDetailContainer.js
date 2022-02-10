@@ -1,43 +1,59 @@
 import { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
-import productos from "../json/productos.json"
 import { useParams } from 'react-router-dom';
+import { getFirestore } from './firebase/firebase';
 
-const getItem = (array) =>{
-    const promesa = new Promise((resolve) => {
-            setTimeout(()=>{
-                resolve(array)
-            } , 500)
-        }
-    )   
-    return promesa
-}
+// const getItem = (array) =>{
+//     const promesa = new Promise((resolve) => {
+//             setTimeout(()=>{
+//                 resolve(array)
+//             } , 500)
+//         }
+//     )   
+//     return promesa
+// }
 
 const ItemDetailContainer = () => {
 
-    const [producto, setProducto] = useState([]);
+    const [producto, setProducto] = useState({});
+    const [loading, setLoading] = useState(true);
     const {itemId} = useParams();
     
     useEffect(() => {
-        setTimeout(()=>{
+        const db = getFirestore();
+        const gamesCollection = db.collection("games");
+        const gameSelect = gamesCollection.doc(itemId);
+        gameSelect.get().then((doc)=>{
+            if(!doc.exists){
+                console.log("No existe el juego");
+                return;
+            }
 
-            getItem(productos).then(res =>{
-                let productoArray = res.filter(items => items.id === parseInt(itemId));
-                let productoFinal = productoArray;
-                return setProducto(productoFinal)
-            }).catch(err => console.log(err)) 
+            setProducto({id: doc.id, ...doc.data()})
+            // Lo desestructuramos como arriba para que se muestre el id con todos los detalles. Sin tener que agregar un id manualmente en firestore
+        }).catch((err) => {
+            console.log(err)
+        }).finally(()=>{
+            setLoading(false)
+        })
 
-        } ,1000)
+        // setTimeout(()=>{
+
+        //     getItem(productos).then(res =>{
+        //         let productoArray = res.filter(items => items.id === parseInt(itemId));
+        //         let productoFinal = productoArray;
+        //         return setProducto(productoFinal)
+        //     }).catch(err => console.log(err)) 
+
+        // } ,1000)
       
     } ,[itemId])
     return(
         <>
-            { (producto.length > 0)? 
+            { (!loading)? 
                 <>
                     <section className='item-detail-container'>
-                        {
-                            producto.map(item => <ItemDetail key={item.id} item={item} />)   
-                        }
+                        <ItemDetail key={producto.id} item={producto} />
                     </section>
                 </>:
                 <>

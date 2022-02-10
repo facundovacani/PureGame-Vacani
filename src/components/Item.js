@@ -11,8 +11,6 @@ const Item = ({ item }) => {
   const [buy, setBuy] = useState(0)
   
 
-  let string = /-/g;
-  let titulo = item.title.replace(string, " ");
 
   return (
     <article>
@@ -20,14 +18,14 @@ const Item = ({ item }) => {
       <div className='item'>
         <Link to={`/item/${item.id}`}>
           <div className='itemImagen'>
-            <img src={item.pictureUrl} alt={titulo} />
+            <img src={item.pictureUrl} alt={item.title} />
             <span>CLick aquí para ver más...</span>
 
           </div>
           <span />
           <div className='itemDescripcion'>
-            <h4>{titulo}</h4>
-            <p><span>Consola:</span> <span>{item.consola}</span></p>
+            <h4>{item.title}</h4>
+            <p><span>Consola:</span> <span>{item.console}</span></p>
             <div className='stock-precio'>
               <span>Stock: {item.stock - buy}</span>
               <span>{item.price} USD</span>
@@ -36,9 +34,9 @@ const Item = ({ item }) => {
           </div>
         </Link>
         {(!add) ?
-          <ItemCount item={item} titulo={titulo} buy={buy} onAdd={onAdd} setAdd={setAdd} setBuy={setBuy} />
+          <ItemCount item={item} buy={buy} onAdd={onAdd} setAdd={setAdd} setBuy={setBuy} />
           :
-          <AddedToCart titulo={titulo} compra={buy} />
+          <AddedToCart compra={buy} titulo={item.title} />
         }
 
       </div>
