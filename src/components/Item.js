@@ -25,12 +25,12 @@ const Item = ({ item }) => {
           <span />
           <div className='itemDescripcion'>
             <h4>{item.title}</h4>
-            <p><span>Consola:</span> <span>{item.console}</span></p>
             <div className='stock-precio'>
               <span>Stock: {item.stock - buy}</span>
-              <span>{item.price} USD</span>
+              <span><b>{item.price} USD</b></span>
 
             </div>
+            <p><span>Consola:</span> <span>{item.console}</span></p>
           </div>
         </Link>
         {(!add) ?

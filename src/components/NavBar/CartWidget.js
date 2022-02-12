@@ -5,11 +5,11 @@ import { contextApp } from '../context/CartContext';
 import {useContext} from "react";
 
 function CartWidget (){
-    const { numCart } = useContext(contextApp);
+    const { numCart, cart} = useContext(contextApp);
 
 
     return ( 
-        <div>
+        <div className='carrito-nav'>
             <Link to="/cart" className='btn-nav' style={{fontSize: "30px"}}>
                 <FontAwesomeIcon icon={faShoppingCart} />
 
@@ -23,6 +23,10 @@ function CartWidget (){
                 <span className="span3"></span>
                 <span className="span4"></span>
             </Link>
+            <ul>
+                {cart.map(item => <li><img src={item.picture} alt={item.name} />  - {item.name}: {item.quantity} {(item.quantity=== 1)? "Unidad":"Unidades"}</li>)}
+                <li>Total en el carrito: <b>{cart.map(item => item.price * item.quantity).reduce((a,b)=> a + b)} USD</b></li>
+            </ul>
         </div>
     )
 }

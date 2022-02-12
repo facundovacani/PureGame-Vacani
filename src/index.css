@@ -263,6 +263,32 @@ code {
   align-items: center;
 
 }
+.carrito-nav > ul{
+  position: absolute;
+  display: none;
+  list-style: none;
+  padding: 10px;
+  font-size: 18px;
+  top: 89px;
+  background-color: var(--neon-violeta-muy-oscuro);
+  border: 1px solid var(--neon-violeta);
+  border-top: none;
+}
+.carrito-nav:hover > ul{
+  display: initial;
+}
+.carrito-nav > ul >li {
+  display: flex;
+  align-items: center;
+}
+.carrito-nav > ul >li:last-child {
+  margin-top: 10px ;
+  justify-content: center;
+}
+.carrito-nav > ul >li > img{
+  width: 90px;
+  height: 100px;
+}
 
 .div-carrito-login .btn-nav {
   width: 100px;
@@ -384,7 +410,7 @@ main > .seccion-item-list {
   min-width: 275px;
   width: 20%;
   max-width: 295px;
-  height: 400px;
+  height: 450px;
 
 }
 
@@ -424,22 +450,21 @@ main > .seccion-item-list {
   text-decoration: none;
   color: var(--blanco);
   display: inline-block;
-  height: 90%;
+  height: 100%;
   width: 100%;
   overflow: hidden;
 }
 .item > a > .itemImagen {
   width: 100%;
-  height: 90%;
+  height: 80%;
   transition: 0.2s;
   border-bottom: 2px solid var(--azul);
 
 
 }
-.item:hover > a > .itemImagen {
-  border-color:var(--neon-celeste);
-}
+
 .item:hover > a > .itemImagen{
+  border-color:var(--neon-celeste);
   height: 75%;
   position: relative;
   overflow: hidden;
@@ -516,9 +541,7 @@ main > .seccion-item-list {
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
 }
-.item:hover > a > .itemDescripcion > h4{
-  font-size: 1.1rem;
-}
+
 .item > a >.itemDescripcion > .stock-precio {
   display: flex;
   justify-content: space-between;
@@ -532,6 +555,22 @@ main > .seccion-item-list {
 .item > p {
   color: var(--blanco);
   height: 10%;
+}
+
+.item > .agregarAlCarro{
+  visibility: hidden;
+  opacity: 0;
+  height: 0%;
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -ms-transition: all 0.1s;
+  -o-transition: all 0.1s;
+}
+.item:hover > .agregarAlCarro{
+  height: 20%;
+  visibility: visible;
+  opacity: 1;
 }
 
 .item:hover > .agregarAlCarro > div>  span {

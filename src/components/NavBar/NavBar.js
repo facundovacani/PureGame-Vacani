@@ -9,7 +9,7 @@ function NavBar() {
   const { numCart } = useContext(contextApp);
   useEffect(() => {
     setTimeout(() => {
-      setCategorias(["Rol", "Deporte", "Aventura", "Acción"]);
+      setCategorias(["Rol", "Deporte", "Aventura"]);
     }, 500);
   }, []);
 
