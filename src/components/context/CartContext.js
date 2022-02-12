@@ -48,7 +48,7 @@ const CartContext = ({ children }) => {
           }
         }
     
-      }
+    }
 
     const isInCart = (id) =>{
         return cart.some(items => items.id === id)
