@@ -8,9 +8,7 @@ function NavBar() {
   const [categorias, setCategorias] = useState([]);
   const { numCart } = useContext(contextApp);
   useEffect(() => {
-    setTimeout(() => {
-      setCategorias(["Rol", "Deporte", "Aventura"]);
-    }, 500);
+    setCategorias([{name: "Categoria", categorias: ["Aventura","Rol", "Deporte"]}, {name: "Consola", categorias:["Nintendo(NES)", "Playstation"] } ]);
   }, []);
 
   return (
@@ -37,7 +35,7 @@ function NavBar() {
             <ul>
               {categorias.map((categoria, i) => (
                 <NavCategorias key={i} categoria={categoria} />
-              ))}
+              ))}{console.log(categorias)}
             </ul>
           </div>
         </div>

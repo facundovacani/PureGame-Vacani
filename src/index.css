@@ -147,9 +147,13 @@ code {
   padding: 15px 30px;
   letter-spacing: 3px;
   display: flex;
+  border: none;
+  background-color: var(--neon-violeta-muy-oscuro);
   color: var(--neon-celeste);
   align-items: center;
+  cursor: pointer;
   justify-content: center;
+  font-weight: 900;
   position: relative;
   transition: 0.2s;
   -webkit-transition: 0.2s;
@@ -239,19 +243,18 @@ code {
   transition-delay: 0.75s;
 }
 
-.listas-categorias{
-  background-color: var(--neon-violeta-muy-oscuro);
-  display: none;
-  list-style: none;
+.categorias .categorias-navs{
   position: absolute;
+  background-color: var(--neon-violeta-muy-oscuro);
+  list-style: none;
   top: 90px;
-  width: 400px;
-}
-.listas-categorias.active{
-  display: initial;
+  padding: 15px;
   
 }
-
+.categorias .categorias-navs > li a {
+  color: var(--neon-celeste);
+  font-size: 18px;
+}
 /*---------------------------------*/
 /*Carrito*/
 
@@ -267,7 +270,6 @@ code {
   position: absolute;
   display: none;
   list-style: none;
-  padding: 10px;
   font-size: 18px;
   top: 89px;
   background-color: var(--neon-violeta-muy-oscuro);
@@ -278,12 +280,38 @@ code {
   display: initial;
 }
 .carrito-nav > ul >li {
+  padding: 15px;
   display: flex;
   align-items: center;
+}
+.carrito-nav > ul >li:nth-last-child(2) {
+  margin-top: 10px ;
+  justify-content: center;
 }
 .carrito-nav > ul >li:last-child {
   margin-top: 10px ;
   justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  
+}
+.carrito-nav > ul >li:last-child > a{
+  display: flex;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  transition: all 0.1s;
+  color: var(--neon-celeste);
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -ms-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  border: 1px solid var(--neon-verde);
+}
+.carrito-nav > ul >li:last-child:hover > a{
+  color: var(--neon-verde);
+  background-color: var(--neon-celeste);
 }
 .carrito-nav > ul >li > img{
   width: 90px;
@@ -731,7 +759,7 @@ main > .seccion-item-list {
 
 .boton-agregado-carro{
   display: block;
-  margin: auto;
+  margin: 0 auto;
   height: 40px;
   width: 60%;
   min-width: 150px;
@@ -823,7 +851,7 @@ main > .seccion-item-list {
   width: 100%;
   font-family: 'Inconsolata', monospace;
   font-size: 18px;
-  height: 30px;
+  height: 40px;
   border: none;
 
   color: var(--blanco);

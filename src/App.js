@@ -39,6 +39,11 @@ function App() {
                 <ItemListContainer />
               </main>
             </Route>
+            <Route path="/console/:consoleId" >
+              <main>
+                <ItemListContainer />
+              </main>
+            </Route>
             <Route exact path="/cart" >
               <main>
                 <Cart />

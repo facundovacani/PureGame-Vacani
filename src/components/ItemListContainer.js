@@ -4,7 +4,8 @@ import ItemList from "./ItemList";
 import { getFirestore } from "./firebase/firebase";
 
 const ItemListContainer = ({greeting}) => {
-    const {categoriaId} = useParams()
+    const {categoriaId} = useParams();
+    const {consoleId} = useParams();
     const [itemsList, setItemsList] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -37,6 +38,27 @@ const ItemListContainer = ({greeting}) => {
                 setLoading(false)
             })
 
+        }else if(consoleId){
+            const gamesCollectionFilter = gamesCollection.where("console", "==", consoleId).limit(20)
+            // let filtrado = productos.filter(item => item.categoria === categoriaId);
+            // // console.log(filtrado, categoriaId);
+            // setItemsList(filtrado)
+            gamesCollectionFilter.get().then((querySnapShot)=> {
+                if(querySnapShot.size === 0){
+                    console.log("No hay documentos en ese query ")
+                    return
+                }
+                setItemsList(querySnapShot.docs.map((doc) =>{
+                    return { id: doc.id, ...doc.data()}
+                }))
+                // console.log(querySnapShot.docs.map((doc) =>{
+                //     return { id: doc.id, ...doc.data()}
+                // }))
+            }).catch((err)=>{
+                console.log(err)
+            }).finally(()=>{
+                setLoading(false)
+            })
         }else{
             // setItemsList(productos)
             const gamesCollectionOrder = gamesCollection.orderBy("title").limit(20)
@@ -57,7 +79,7 @@ const ItemListContainer = ({greeting}) => {
         }            
 
 
-    }, [categoriaId])
+    }, [categoriaId, consoleId])
     
     return (
         <>        
