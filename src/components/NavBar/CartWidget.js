@@ -24,7 +24,7 @@ function CartWidget (){
                 <span className="span4"></span>
             </Link>
             <ul>
-                {cart.map(item => <li><img src={item.picture} alt={item.name} />  - {item.name}: {item.quantity} {(item.quantity=== 1)? "Unidad":"Unidades"}</li>)}
+                {cart.map((item,i) => <li key={i}><img src={item.picture} alt={item.name} />  - {item.name}: {item.quantity} {(item.quantity=== 1)? "Unidad":"Unidades"}</li>)}
                 <li>Total- <b>{total()} USD</b></li>
                 <li><Link to="/cart">Ir al carrito</Link></li>
             </ul>

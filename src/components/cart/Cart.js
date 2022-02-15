@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { contextApp } from '../context/CartContext';
 import ItemCart from './ItemCart';
 import { Link } from 'react-router-dom';
+import Form from "./Form"
 
 
 const Cart = () => {
-
+  const [ formState, setFormState ] = useState(false);
   const { cart, clear, total, totalCantidad } = useContext(contextApp);
+  
   return (
     <>
 
@@ -41,13 +43,20 @@ const Cart = () => {
 
 
           </table>
+          <button onClick={() => setFormState(!formState)}>Terminar Compra</button>
+
+          {formState && 
+            <div className='form-container'>
+              <Form total={total} cart={cart} cambio={setFormState} />
+            </div>
+          }
 
         </>
       }
-      {(cart.length === 0) && 
-      <>
-        <h5 style={{fontSize:"25px", marginTop:"100px"}}>Carrito vacío. Seleccione el juego que usted quiera en el <Link to="/"style={{color: "var(--neon-celeste)"}} >Catálogo</Link> </h5>
-      </>}
+      {(cart.length === 0) &&
+        <>
+          <h5 style={{ fontSize: "25px", marginTop: "100px" }}>Carrito vacío. Seleccione el juego que usted quiera en el <Link to="/" style={{ color: "var(--neon-celeste)" }} >Catálogo</Link> </h5>
+        </>}
     </>
 
 
