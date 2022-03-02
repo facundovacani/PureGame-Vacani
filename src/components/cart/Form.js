@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState} from 'react';
 import { getFirestore } from "../firebase/firebase";
 import firebase from 'firebase';
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -17,10 +17,6 @@ const Form = ({cart, total, cambio, clear}) => {
     const [loading, setLoading] = useState(false);
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
-    console.log(nameRef)
-    useEffect(()=>{
-        console.log("Renderizando componente")
-    })
 
     async function clickForm(event){
         event.preventDefault();
