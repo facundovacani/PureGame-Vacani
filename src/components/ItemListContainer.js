@@ -14,8 +14,7 @@ const ItemListContainer = ({greeting}) => {
         setLoading(true)
         const db = getFirestore();    
         const gamesCollection = db.collection("games")
-        //Una forma de filtrar directamente en la base de datos de firestore. Es con el metodo where. Que utiliza la "columna" que queramos filtrar (no son columnas, ya que no es una base de datos relacional), luego el operador, y al final en base a que se filtra:
-        // .where("category", "==", categoriaId); acá le aplicamos un filtro where, como en sql.
+        
         if(categoriaId){
             const gamesCollectionFilter = gamesCollection.where("category", "==", categoriaId).limit(20);
             gamesCollectionFilter.get().then((querySnapShot)=> {
@@ -50,7 +49,6 @@ const ItemListContainer = ({greeting}) => {
                 setLoading(false)
             })
         }else{
-            // setItemsList(productos)
             const gamesCollectionOrder = gamesCollection.orderBy("title").limit(20)
             gamesCollectionOrder.get().then((querySnapShot)=> {
                 if(querySnapShot.size === 0){

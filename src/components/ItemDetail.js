@@ -44,7 +44,6 @@ const ItemDetail = ({item}) => {
 
                     </div>
                     <div className='item-detail-content-description'>
-                        {/* <button id='show-hidden-description'>Ver Descripción</button> */}
                         <p id='description-item-content'>{item.description}</p>
 
                     </div>
