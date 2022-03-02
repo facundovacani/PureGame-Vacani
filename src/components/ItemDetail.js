@@ -51,7 +51,7 @@ const ItemDetail = ({item}) => {
 
                 </div>
                 <div>
-                    <span>Stock Disponible: {item.stock - buy}</span>
+                    <span>Stock Disponible: {item.stock}</span>
                     {
                         (!add)?                         
                         <article>

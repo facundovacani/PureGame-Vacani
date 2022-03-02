@@ -1,16 +1,16 @@
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { contextApp } from '../context/CartContext';
 import {useContext} from "react";
 
 function CartWidget (){
-    const { numCart, cart, total} = useContext(contextApp);
+    const { numCart } = useContext(contextApp);
 
 
     return ( 
         <div className='carrito-nav'>
-            <Link to="/cart" className='btn-nav' style={{fontSize: "30px"}}>
+            <NavLink to="/cart" activeClassName='active-link' className='btn-nav' style={{fontSize: "30px"}}>
                 <FontAwesomeIcon icon={faShoppingCart} />
 
             
@@ -22,12 +22,7 @@ function CartWidget (){
                 <span className="span2"></span>
                 <span className="span3"></span>
                 <span className="span4"></span>
-            </Link>
-            <ul>
-                {cart.map((item,i) => <li key={i}><img src={item.picture} alt={item.name} />  - {item.name}: {item.quantity} {(item.quantity=== 1)? "Unidad":"Unidades"}</li>)}
-                <li>Total- <b>{total()} USD</b></li>
-                <li><Link to="/cart">Ir al carrito</Link></li>
-            </ul>
+            </NavLink>
         </div>
     )
 }

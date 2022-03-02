@@ -2,13 +2,16 @@ import CartWidget from "./CartWidget";
 import logo from "./../../títuloLower-min.png";
 import { useState, useEffect, useContext } from "react";
 import NavCategorias from "./NavCategorias";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { contextApp } from "../context/CartContext";
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 function NavBar() {
   const [categorias, setCategorias] = useState([]);
   const { numCart } = useContext(contextApp);
+  const [active, setActive] = useState(false);
   useEffect(() => {
-    setCategorias([{name: "Categoria", categorias: ["Aventura","Rol", "Deporte"]}, {name: "Consola", categorias:["Nintendo(NES)", "Playstation"] } ]);
+    setCategorias([{name: "Categoria", categorias: ["Aventura","Rol", "Deporte"]}, {name: "Consola", categorias:["Nintendo(NES)", "Playstation", "Nintendo64"] } ]);
   }, []);
 
   return (
@@ -21,23 +24,26 @@ function NavBar() {
           <span className="span3"></span>
           <span className="span4"></span>
         </Link>
-        <div className="contenedor-central-nav">
+        <div className={`contenedor-central-nav ${(active)? "active": ""}`}>
           <div className="inicioNav">
-            <Link to="/" className="btn-nav">
+            <NavLink exact to="/" className="btn-nav" activeClassName="active-link" onClick={()=> setActive(!active)}>
               <span className="span1"></span>
               <span className="span2"></span>
               <span className="span3"></span>
               <span className="span4"></span>
               Inicio
-            </Link>
+            </NavLink>
           </div>
           <div className="div-lista">
             <ul>
               {categorias.map((categoria, i) => (
-                <NavCategorias key={i} categoria={categoria} />
+                <NavCategorias key={i} categoria={categoria} activo={active} cambio={setActive} />
               ))}
             </ul>
           </div>
+        </div>
+        <div className="icon-menu" onClick={()=> setActive(!active)}>
+          <FontAwesomeIcon icon={faBars} />
         </div>
 
         <div className="div-carrito-login">

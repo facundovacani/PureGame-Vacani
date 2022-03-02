@@ -26,7 +26,7 @@ const Item = ({ item }) => {
           <div className='itemDescripcion'>
             <h4>{item.title}</h4>
             <div className='stock-precio'>
-              <span>Stock: {item.stock - buy}</span>
+              <span>Stock: {item.stock}</span>
               <span><b>{item.price} USD</b></span>
 
             </div>

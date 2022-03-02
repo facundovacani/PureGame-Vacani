@@ -8,7 +8,6 @@ import Form from "./Form"
 const Cart = () => {
   const [ formState, setFormState ] = useState(false);
   const { cart, clear, total, totalCantidad } = useContext(contextApp);
-  
   return (
     <>
 
@@ -43,11 +42,11 @@ const Cart = () => {
 
 
           </table>
-          <button onClick={() => setFormState(!formState)}>Terminar Compra</button>
+          <button className='active-form' onClick={() => setFormState(!formState)}>Terminar Compra</button>
 
           {formState && 
             <div className='form-container'>
-              <Form total={total} cart={cart} cambio={setFormState} />
+              <Form total={total} cart={cart} clear={clear} cambio={setFormState} />
             </div>
           }
 

@@ -3,16 +3,6 @@ import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 import { getFirestore } from './firebase/firebase';
 
-// const getItem = (array) =>{
-//     const promesa = new Promise((resolve) => {
-//             setTimeout(()=>{
-//                 resolve(array)
-//             } , 500)
-//         }
-//     )   
-//     return promesa
-// }
-
 const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState({});
@@ -36,16 +26,6 @@ const ItemDetailContainer = () => {
         }).finally(()=>{
             setLoading(false)
         })
-
-        // setTimeout(()=>{
-
-        //     getItem(productos).then(res =>{
-        //         let productoArray = res.filter(items => items.id === parseInt(itemId));
-        //         let productoFinal = productoArray;
-        //         return setProducto(productoFinal)
-        //     }).catch(err => console.log(err)) 
-
-        // } ,1000)
       
     } ,[itemId])
     return(

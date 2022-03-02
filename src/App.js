@@ -39,7 +39,7 @@ function App() {
                 <ItemListContainer />
               </main>
             </Route>
-            <Route path="/console/:consoleId" >
+            <Route path="/consola/:consoleId" >
               <main>
                 <ItemListContainer />
               </main>

@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const AddedToCart = ({compra, titulo}) => {
   return (
     <>
-      <p>Agregaste {(compra === 1)? compra +" unidad del juego " +titulo: compra + " unidades del juego " + titulo} </p>
-      <button className='boton-agregado-carro'><Link to="/cart">Terminar mi compra</Link></button>
+      <p>Añadido {(compra === 1)? compra +" unidad del " +titulo: compra + " unidades del " + titulo} </p>
+      <button className='boton-agregado-carro'><Link to="/cart">Terminar compra</Link></button>
     </>
   );
 };

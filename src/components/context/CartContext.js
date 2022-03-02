@@ -6,6 +6,7 @@ const CartContext = ({ children }) => {
 
     const [cart, setCart] = useState([])
     const [numCart, setNumCart] = useState(0);
+    console.log(cart);
     
     const addItem = (item, quantity, title) =>{
 
