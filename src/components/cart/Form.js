@@ -138,7 +138,7 @@ const Form = ({cart, total, cambio, clear}) => {
                     </label><br />
                     <label className='cellphone'>Celular*:
                     <select name='country' ref={numberCountryRef}>
-                        <option value="+598" selected>+598</option>
+                        <option value="+598">+598</option>
                         <option value="+54">+54</option>
                         <option value="+56">+56</option>
                     </select>

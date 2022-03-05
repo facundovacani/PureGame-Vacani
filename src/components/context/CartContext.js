@@ -30,21 +30,30 @@ const CartContext = ({ children }) => {
         let valor = parseInt(document.getElementById("item" + item.id).value);
         let alerta = document.getElementById("alerta" + item.id);
         let sum = valor;
+        let stock = cart.findIndex(e => e.id === item.id);
+        console.log(cart[stock])
         if (valor === null) {
-          let resultadoAlerta = alerta.disabled = true;
-          return resultadoAlerta
+            let resultadoAlerta = alerta.disabled = true;
+            return resultadoAlerta
         } else if (valor > 0) {
-          if (valor === 1) {
-            addItem(item, valor, item.title);
-            setAdd(true);
-            setBuy(valor);
-            setNumCart(numCart + sum)
-          } else if (valor > 1) {
-            addItem(item, valor, item.title);
-            setAdd(true);
-            setBuy(valor);
-            setNumCart(numCart + sum)
-          }
+            if(cart[stock] === undefined){
+                if(valor <= item.stock){
+                    addItem(item, valor, item.title);
+                    setAdd(true);
+                    setBuy(valor);
+                    setNumCart(numCart + sum)  
+                }
+            }else{
+                if(cart[stock].quantity === item.stock && valor > item.stock){
+                    let resultadoAlerta = alerta.disabled = true;
+                    return resultadoAlerta;
+                }else if(valor <= (item.stock - cart[stock].quantity)){
+                    addItem(item, valor, item.title);
+                    setAdd(true);
+                    setBuy(valor);
+                    setNumCart(numCart + sum)    
+                }
+            }            
         }
     
     }

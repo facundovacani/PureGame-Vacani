@@ -1,8 +1,17 @@
+import { useContext } from "react";
+import { contextApp } from "./context/CartContext";
+
 const ItemCount = ({buy ,item , onAdd, setAdd, setBuy}) => {    
 
+    const {cart} = useContext(contextApp);
+    let stock = cart.findIndex(e => e.id === item.id);
     function addOne(){
-        if(buy < item.stock){
+        if(cart[stock] === undefined){
             setBuy(buy + 1);
+        }else{
+            if(buy < (item.stock - cart[stock].quantity)){
+                setBuy(buy + 1);
+            }            
         }
     }
     function decressOne(){
