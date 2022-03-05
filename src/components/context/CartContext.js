@@ -31,7 +31,6 @@ const CartContext = ({ children }) => {
         let alerta = document.getElementById("alerta" + item.id);
         let sum = valor;
         let stock = cart.findIndex(e => e.id === item.id);
-        console.log(cart[stock])
         if (valor === null) {
             let resultadoAlerta = alerta.disabled = true;
             return resultadoAlerta
