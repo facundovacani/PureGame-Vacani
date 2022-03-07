@@ -6,7 +6,7 @@ const ItemCount = ({buy ,item , onAdd, setAdd, setBuy}) => {
     const {cart} = useContext(contextApp);
     let stock = cart.findIndex(e => e.id === item.id);
     function addOne(){
-        if(cart[stock] === undefined){
+        if(cart[stock] === undefined && buy < item.stock){
             setBuy(buy + 1);
         }else{
             if(buy < (item.stock - cart[stock].quantity)){
