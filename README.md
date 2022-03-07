@@ -75,14 +75,18 @@ No instalar la versión 9 de firebase. Ya que esta utiliza la versión 8 y hay v
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Ejecuta la aplicación en el modo de desarrollo.\ Abra [http://localhost:3000](http://localhost:3000) para verla en su navegador.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+La página se volverá a cargar cuando realice cambios.\ También puede ver errores de pelusa en la consola.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Inicia el corredor de prueba en el modo de visualización interactiva. Consulte la sección sobre [ejecutar pruebas] (https://facebook.github.io/create-react-app/docs/running-tests) para obtener más información.
 
+### `npm run build`
+
+Construye la aplicación para producción en la carpeta `build`.\ Empaqueta correctamente React en modo de producción y optimiza la compilación para obtener el mejor rendimiento.
+
+La compilación se minimiza y los nombres de archivo incluyen los hash.\ ¡Su aplicación está lista para implementarse!
+
+Consulte la sección sobre [implementación](https://facebook.github.io/create-react-app/docs/deployment) para obtener más información.
